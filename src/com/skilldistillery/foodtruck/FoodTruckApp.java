@@ -10,8 +10,7 @@ public class FoodTruckApp {
 		// TODO Create an array to store up to 5 food truck objects
 		// THIS MAIN WILL BE THE ONLY STATIC METHOD
 
-		System.out.println("Please follow the prompts given" + "\n"
-				+ "Please note, if you wish to stop entering data, just type quit when prompted for a truck name. ");
+		System.out.println("Please follow the prompts given");
 
 		for (int i = 0; i < foodTruck.length; i++) {
 			foodTruck[i] = new FoodTruck(null, null, null);
@@ -21,11 +20,15 @@ public class FoodTruckApp {
 			foodTruck[i].setFoodType(scanner.next());
 			System.out.println("Please enter the food rating for truck " + i);
 			foodTruck[i].setFoodRating(scanner.next());
-
+			System.out.println(
+					"If you would like to quit now, please type out quit, otherwise enter no");
+			if (scanner.next().equals("quit")) {
+				break;
+			} 
 		}
 
 		scanner.close();
-
+System.out.println("We are able to continue now");
 //		System.out.println("Please enter the names for the five food trucks one at a time. ");
 //			for(int i = 0; i < foodTruckNames.length; i++) {
 //				foodTruckNames[i] = scanner.next();
