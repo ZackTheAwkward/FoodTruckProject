@@ -14,7 +14,7 @@ public class FoodTruckApp {
 		for (int i = 0; i < foodTruck.length; i++) {
 			int currentTruck = i + 1;
 			
-			foodTruck[i] = new FoodTruck(null, null, 0);
+			foodTruck[i] = new FoodTruck(null, null, 0.0);
 		
 			System.out.println("Please enter the name for food truck " + currentTruck);
 			foodTruck[i].setTruckName(scanner.next());
@@ -47,7 +47,7 @@ public class FoodTruckApp {
 
 				}
 
-				break;
+				continue;
 
 			} else if (selection == 2) {
 				System.out.println("List of Average rating of the Food Trucks");
@@ -56,6 +56,7 @@ public class FoodTruckApp {
 					int average = sum/5;
 					System.out.println(average);
 				}
+				continue;
 			}
 			 else if (selection == 3) {
 				System.out.println("The highest rated food truck is ");
@@ -70,8 +71,10 @@ public class FoodTruckApp {
 					if(large < foodTruck[i].getFoodRating()) {
 						large = foodTruck[i].getFoodRating();
 					}
+					
 				System.out.println("The food truck with the highest rating is " + large);
 				}
+				continue;
 
 				
 			} else if (selection == 4) {

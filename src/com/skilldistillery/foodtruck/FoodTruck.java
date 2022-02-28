@@ -44,7 +44,9 @@ public class FoodTruck {
 		truckId = (int)Math.random()*100;
 		this.truckId = truckId;
 	 }
-	
+	public double getTruckId() {
+		return truckId;
+	}
 	
 	
 	
