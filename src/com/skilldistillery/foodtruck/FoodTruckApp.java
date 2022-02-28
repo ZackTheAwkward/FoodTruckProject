@@ -51,10 +51,12 @@ public class FoodTruckApp {
 
 			} else if (selection == 2) {
 				System.out.println("List of Average rating of the Food Trucks");
-//				for (int i = 0; i < foodTruck.length; i++) {
-//					int sum = (int)foodTruck[0].getFoodRating(); 
-//					System.out.println(average);
+				for (int i = 0; i < foodTruck.length; i++) {
+					int sum = (int)foodTruck[0].getFoodRating()+(int)foodTruck[1].getFoodRating() + (int)foodTruck[2].getFoodRating()+ (int)foodTruck[3].getFoodRating()+ (int)foodTruck[4].getFoodRating(); 
+					int average = sum/5;
+					System.out.println(average);
 				}
+			}
 			 else if (selection == 3) {
 				System.out.println("The highest rated food truck is ");
 				for(int i = 0; i < foodTruck.length; i++) {
