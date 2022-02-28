@@ -1,13 +1,10 @@
 package com.skilldistillery.foodtruck;
 
 public class FoodTruck {
-//TODO define fields for a unique numeric id, a name (Name of FoodTruck), and a numeric rating.
-	//Refer to Cars/ParkingLot drills in Encapsulation drills
 	public String truckName;
 	public String foodType;
-	public String foodRating;
+	public double foodRating;
 	public double truckId;
-	
 
 		
 	public String toString() {
@@ -19,7 +16,7 @@ public class FoodTruck {
 		
 		
 	}	
-	public FoodTruck(String truckName, String foodType, String foodRating) {
+	public FoodTruck(String truckName, String foodType, double foodRating) {
 		this.truckName = truckName;
 		this.foodType = foodType;
 		this.foodRating = foodRating;
@@ -37,13 +34,16 @@ public class FoodTruck {
 	public void setFoodType(String foodType) {
 		this.foodType = foodType;
 	}
-	public String getFoodRating() {
+	public double getFoodRating() {
 		return foodRating;
 	}
-	public void setFoodRating(String foodRating) {
+	public void setFoodRating(double foodRating) {
 		this.foodRating = foodRating;
 	}
-	
+	 public void setTruckId(double truckId) {
+		truckId = (int)Math.random()*100;
+		this.truckId = truckId;
+	 }
 	
 	
 	
@@ -52,4 +52,3 @@ public class FoodTruck {
 	
 	
 }
-
