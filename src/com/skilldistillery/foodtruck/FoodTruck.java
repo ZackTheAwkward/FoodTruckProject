@@ -1,10 +1,10 @@
 package com.skilldistillery.foodtruck;
 
 public class FoodTruck {
-	public String truckName;
-	public String foodType;
-	public double foodRating;
-	public double truckId;
+	private String truckName;
+	private String foodType;
+	private double foodRating;
+	private double truckId;
 
 		
 	public String toString() {

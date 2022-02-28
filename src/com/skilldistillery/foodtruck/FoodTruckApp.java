@@ -68,21 +68,21 @@ public class FoodTruckApp {
 				}
 				continue;
 			} else if (selection == 3) {
+				double large = foodTruck[0].getFoodRating();
 				for (int i = 0; i < foodTruck.length; i++) {
 					if(foodTruck[i] == null) {
 						break;
 					} else {
 
-					double large = foodTruck[0].getFoodRating();
 			
 					if (large < foodTruck[i].getFoodRating()) {
 						large = foodTruck[i].getFoodRating();
 					}
 						}
 					
-					System.out.println("The winning food truck is " + foodTruck[i]);
 				}
-				continue;
+					System.out.println("The winning food truck has a rating of " + large);
+					continue;
 
 			} else if (selection == 4) {
 				System.out.println("Quit");
