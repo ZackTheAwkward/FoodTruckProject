@@ -13,16 +13,16 @@ public class FoodTruckApp {
 
 		for (int i = 0; i < foodTruck.length; i++) {
 			int currentTruck = i + 1;
-			
+
 			foodTruck[i] = new FoodTruck(null, null, 0.0);
-		
+
 			System.out.println("Please enter the name for food truck " + currentTruck);
 			foodTruck[i].setTruckName(scanner.next());
 
 			System.out.println("Please enter the food type for truck " + currentTruck);
 			foodTruck[i].setFoodType(scanner.next());
 
-			System.out.println("Please enter the food rating for truck " + currentTruck);
+			System.out.println("Please enter the food rating for truck " + currentTruck + " as a double");
 			foodTruck[i].setFoodRating(scanner.nextDouble());
 
 			System.out.println("If you would like to quit now, please type out quit, otherwise enter no");
@@ -42,8 +42,12 @@ public class FoodTruckApp {
 			if (selection == 1) {
 				System.out.println("List of all existing Food Truck ");
 				for (int i = 0; i < foodTruck.length; i++) {
-					
-					System.out.println(foodTruck[i]);
+					if (foodTruck[i] == null) {
+						break;
+					} else {
+
+						System.out.println(foodTruck[i]);
+					}
 
 				}
 
@@ -52,31 +56,34 @@ public class FoodTruckApp {
 			} else if (selection == 2) {
 				System.out.println("List of Average rating of the Food Trucks");
 				for (int i = 0; i < foodTruck.length; i++) {
-					int sum = (int)foodTruck[0].getFoodRating()+(int)foodTruck[1].getFoodRating() + (int)foodTruck[2].getFoodRating()+ (int)foodTruck[3].getFoodRating()+ (int)foodTruck[4].getFoodRating(); 
-					int average = sum/5;
-					System.out.println(average);
+					if (foodTruck[i] == null) {
+						break;
+					} else {
+						double sum = foodTruck[0].getFoodRating() +  foodTruck[1].getFoodRating()
+								+ foodTruck[2].getFoodRating() + foodTruck[3].getFoodRating()
+								+ foodTruck[4].getFoodRating();
+						double average = sum / 5;
+						System.out.println(average);
+					}
 				}
 				continue;
-			}
-			 else if (selection == 3) {
-				System.out.println("The highest rated food truck is ");
-				for(int i = 0; i < foodTruck.length; i++) {
-					
-					double small = foodTruck[0].getFoodRating();
+			} else if (selection == 3) {
+				for (int i = 0; i < foodTruck.length; i++) {
+					if(foodTruck[i] == null) {
+						break;
+					} else {
+
 					double large = foodTruck[0].getFoodRating();
-					
-					if (small > foodTruck[i].getFoodRating() ) {
-						small = foodTruck[i].getFoodRating();
-					}
-					if(large < foodTruck[i].getFoodRating()) {
+			
+					if (large < foodTruck[i].getFoodRating()) {
 						large = foodTruck[i].getFoodRating();
 					}
+						}
 					
-				System.out.println("The food truck with the highest rating is " + large);
+					System.out.println("The winning food truck is " + foodTruck[i]);
 				}
 				continue;
 
-				
 			} else if (selection == 4) {
 				System.out.println("Quit");
 				break;
